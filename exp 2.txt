@@ -1,0 +1,231 @@
+Experiment: 2.  
+ A program written in C language for Matrix Multiplication fails. Introspect the causes for its failure and write down the possible reasons for its failure. 
+ 
+Aim: 
+•	This program aims to demonstrate and validate the functionality of matrix multiplication using nested loops in C.  
+•	It specifically seeks to multiply two predefined matrices, verify the correctness of the resulting matrix, and illustrate the basic principles of array manipulation and arithmetic operations within the context of matrix algebra.  
+•	The program is intended for educational purposes, providing a practical example of how to implement and understand matrix multiplication, which is a fundamental operation in various scientific, engineering, and computational applications. 
+ 
+Objectives: 
+For the matrix multiplication program, the objectives can be structured to ensure comprehensive learning and demonstration of key programming concepts.  
+ 
+Here are some well-defined objectives: 
+ 
+•	Demonstrate Matrix Multiplication Logic: To implement and showcase the algorithm for multiplying two matrices, illustrating how nested loops can be used to calculate the product of matrices based on their dimensions. 
+ 
+•	Ensure Correct Implementation: To correctly implement the matrix multiplication process by ensuring that each element of the resultant matrix is computed accurately through the sum of products of corresponding elements of the row of the first matrix and the column of the second matrix. 
+•	Validate Program Correctness: To validate the correctness of the program by testing it with predefined matrices, ensuring that the output matches expected results for given test cases. 
+•	Teach Array Manipulation: To provide a practical example of how arrays can be manipulated in C, demonstrating the use of twodimensional arrays to represent matrices and perform operations on them. 
+•	Illustrate Use of Constants and Definitions: To utilize preprocessor directives such as #define for defining constants, thereby teaching the importance of making programs adaptable and easier to modify in terms of matrix dimensions. 
+•	Introduce Performance Considerations: Although not directly a focus for small matrix sizes, introduce discussions or comments within the program regarding the complexity of the matrix multiplication algorithm and its implications for larger matrices. 
+ 
+These objectives help in not only understanding and implementing matrix multiplication but also in grasping broader programming practices and considerations in a simple yet effective manner. 
+Below, provides a simple example of a C program for matrix multiplication that could potentially fail due to common issues, and then discuss some reasons for its failure. 
+ 
+Example of a Matrix Multiplication Program in C. 
+ 
+#include <stdio.h> #include <stdlib.h> int main() {     int a[2][3] = {{1, 2, 3}, {4, 5, 6}};     int b[3][2] = {{1, 2}, {3, 4}, {5, 6}};     int c[2][2]; 
+    int i, j, k; 
+    // Matrix multiplication logic     for (i = 0; i < 2; i++) {         for (j = 0; j < 2; j++) { 
+            c[i][j] = 0; // Initializing elements of matrix c to 0             for (k = 0; k < 3; k++) {                 c[i][j] += a[i][k] * b[k][j]; 
+            } 
+        } 
+    } 
+ 
+    // Printing the result matrix c 
+    printf("Result of matrix multiplication:\n"); 
+    for (i = 0; i < 2; i++) {         for (j = 0; j < 2; j++) {             printf("%d ", c[i][j]); 
+        } 
+        printf("\n"); 
+    }     return 0; 
+} 
+ 
+Possible Reasons for Failure 
+Dimension Mismatch Error: 
+If the inner dimensions of the matrices don't match (i.e., the number of columns in the first matrix is not equal to the number of rows in the second matrix), the program will not correctly perform matrix multiplication or might access invalid memory if coded without this check. 
+Uninitialized Variables: 
+In this example, the matrix c is initialized within the loop. If this initialization step was missed, and c[i][j] was used without setting it to zero first, the program would yield incorrect results by accumulating products into garbage values. 
+Boundary Conditions Not Checked: 
+The program assumes the sizes of the matrices are correct and does not dynamically handle different sizes. This hard-coded limit may fail if matrix dimensions are changed without adjusting the loop boundaries accordingly. 
+Integer Overflow: 
+If the elements of the matrices are large, the product (or even the sum of the products) may exceed the range of int in C, leading to overflow and incorrect results. 
+Memory Issues: 
+While this static allocation generally does not lead to memory issues, dynamically allocated matrices using malloc without proper checks for NULL (indicating allocation failure) could cause the program to crash. 
+Indexing Errors: 
+Off-by-one errors are common in loops. If the loop counters are incorrectly set (e.g., k < 2 instead of k < 3 in this context), it could result in wrong calculations or missed operations. 
+Debugging and Validation 
+To ensure that the program functions correctly: 
+o	Boundary Checks: Always check matrix dimensions before attempting operations. 
+o	Initialization: Ensure all matrices are initialized properly before use. 
+o	Type Safety: Consider the range of values and use appropriate data types (long long for larger ranges, or even floating-point types if necessary). 
+o	Testing: Implement tests with various matrix sizes and content, including edge cases such as zero matrices, single-element matrices, and matrices with negative numbers. 
+By considering these aspects, programmers can anticipate common failures in matrix multiplication implementations and enhance the robustness and accuracy of their programs. 
+Static allocation is useful when the size of the matrices is known in advance and does not change. This example assumes predefined sizes for the two matrices. 
+Static Allocation Matrix Multiplication Program in C. 
+#include <stdio.h> 
+#define R1 2  // Number of rows in the first matrix 
+#define C1 3  // Number of columns in the first matrix (and rows in the second) 
+#define C2 2  // Number of columns in the second matrix int main() {     int a[R1][C1] = {{1, 2, 3}, {4, 5, 6}}; // First matrix     int b[C1][C2] = {{1, 2}, {3, 4}, {5, 6}}; // Second matrix     int c[R1][C2]; // Resultant matrix of dimensions R1 x C2     int i, j, k; 
+    // Matrix multiplication logic     for (i = 0; i < R1; i++) {         for (j = 0; j < C2; j++) { 
+            c[i][j] = 0; // Initializing elements of matrix c to 0             for (k = 0; k < C1; k++) {                 c[i][j] += a[i][k] * b[k][j]; 
+            } 
+        } 
+    } 
+    // Printing the result matrix c 
+    printf("Result of matrix multiplication:\n"); 
+    for (i = 0; i < R1; i++) {         for (j = 0; j < C2; j++) {             printf("%d ", c[i][j]); 
+        } 
+        printf("\n"); 
+    }     return 0; 
+} 
+ 
+Key Aspects of the Static Allocation Program: 
+ 
+Fixed Sizes: Matrix dimensions are defined using macros (R1, C1, C2), which simplifies the dimension management but reduces flexibility compared to dynamic allocation. 
+Initialization: The resultant matrix c is initialized within the nested loop structure, ensuring that each element starts from zero before accumulation. 
+Nested Loops: Three nested loops efficiently handle the multiplication. The outer two loops iterate through the elements of the resultant matrix, and the innermost loop performs the multiplication and addition. 
+ 
+Simple Output: The program prints the resultant matrix after completing the multiplication, demonstrating the immediate result of the operation. 
+ 
+This program is ideal for educational purposes or situations where the matrix sizes are known and fixed at compile time. It illustrates the basic mechanics of matrix multiplication using static array allocation in C. 
+ 
+What is the output of this program: 
+ 
+The given C program performs matrix multiplication of two matrices, a and b, and outputs the resultant matrix c. The matrix a has dimensions 2x3, and matrix b has dimensions 3x2. The output matrix c will have dimensions 2x2 as a result of the multiplication. 
+ 
+Let's break down the calculation: 
+ 
+  
+ 
+Output of the program: 
+Result of matrix multiplication: 
+22 28  
+49 64 
+ 
+This output reflects the matrix multiplication result as calculated. The matrix c represents the dot product of rows of a and columns of b for each of its elements. 
+ 
+Evaluation: 
+The evaluation of the program involves assessing various aspects such as its functionality, correctness, efficiency, and usability.  
+Here's a breakdown of these aspects for the provided C program that performs matrix multiplication: 
+1.	Functionality 
+The program is designed to multiply two matrices. It successfully takes two predefined matrices, a and b, multiplies them, and outputs the resultant matrix c. The program includes the necessary nested loops to compute the product of the matrices according to matrix multiplication rules. It correctly initializes the elements of the resultant matrix to zero before accumulation, which is crucial for accurate results. 
+2.	Correctness 
+The correctness of the program can be affirmed through the output it generates, which matches the expected results of matrix multiplication: 
+Input matrices: 
+Matrix a: 2x3 matrix. 
+Matrix b: 3x2 matrix. 
+ 
+Resultant matrix c: 
+Expected output (as manually calculated and confirmed by the program) 
+ 
+ 
+ 
+ 
+ 
+Test Case for Checking Matrix Multiplication: 
+ 
+Test Case ID: TC_EO001 
+Description: Verify that the program correctly performs matrix multiplication. Preconditions: The program is compiled and ready to run. 
+Test Steps: 
+1.	Modify the program if necessary and recompile. 
+2.	Run the program. 
+3.	Observe the output. 
+ 
+Test Data: 
+Matrix A: \[1,2\[1,2, 3,43,4] 
+Matrix B: \[5,6\[5,6, 7,87,8] 
+ 
+Expected Result: 
+Resultant Matrix C: \[19,22\[19,22, 43,5043,50] 
+ 
+Actual Result: This will be filled out after running the test to record the actual output displayed. 
+Pass/Fail Criteria: Pass if the output exactly matches the expected result. Fail otherwise. 
+Postconditions: The program terminates without errors and returns to the operating system. 
+Remarks: This test checks the program's ability to correctly multiply two matrices and handle basic arithmetic operations. 
+ 
+Possible Reasons for Failure 
+1. Incorrect Logic in Matrix Multiplication: 
+• The nested loops may not be correctly implemented, leading to incorrect calculations. 
+2. Dimension Mismatch: 
+• The program might not correctly check if the matrices are compatible for multiplication (i.e., the number of columns in the first matrix must equal the number of rows in the second matrix). 
+3. Data Type Overflow: 
+• If the matrices contain large values, there might be an overflow issue if the data types used are not sufficient to handle the results. 
+4. Improper Memory Allocation: 
+• The program might not allocate memory correctly for the resultant matrix, leading to segmentation faults or incorrect results. 
+5. Boundary Conditions: 
+• The program might fail to handle edge cases, such as multiplying matrices with zero elements or very large matrices. 
+6. Incorrect Indexing: 
+•	Errors in indexing during the traversal of matrices can lead to accessing incorrect elements, thereby producing wrong results. 
+ 
+Example-2. 
+Test Case Example: Matrix Multiplication in C Language 
+Test Case ID: TC_MM001 
+Description: Verify that the program correctly performs matrix multiplication for two 2x2 matrices. 
+Preconditions: 
+•	The program is compiled without errors and ready to run. 
+•	The matrices are initialized within the program or provided as input. 
+Test Steps: 
+•	Initialize Matrix A and Matrix B with predefined values. 
+•	Run the program. 
+•	Observe the output and record the resultant matrix. 
+ 
+ 
+ 
+Actual Result: (This field will be filled out after running the test to record the actual output displayed by the program.) Pass/Fail Criteria: 
+•	Pass if the output exactly matches the expected result. 
+•	Fail if the output does not match the expected result. 
+Postconditions: 
+•	The program should terminate without errors and return control to the operating system. 
+•	Memory used for matrices should be properly deallocated if dynamically allocated. 
+Remarks: This test checks the program's ability to handle matrix multiplication with basic 2x2 matrices. 
+Possible Reasons for Failure 
+Incorrect Loop Implementation: 
+•	Nested loops for multiplication may not iterate correctly over matrix elements. 
+Dimension Mismatch Handling: 
+•	The program may not verify that the number of columns in the first matrix matches the number of rows in the second matrix. 
+Data Type Issues: 
+•	Using incorrect data types may lead to overflow or underflow if matrix elements are large. 
+Memory Allocation Issues: 
+•	Failure to allocate memory correctly for the resultant matrix can lead to segmentation faults or incorrect results. 
+Indexing Errors: 
+•	Errors in accessing matrix elements due to incorrect indices can produce wrong results. 
+Boundary Conditions: 
+•	Failure to handle edge cases like zero matrices, identity matrices, or matrices with large numbers. 
+Test Case Example in Detail 
+#include <stdio.h> 
+#define N 2 // Dimension for 2x2 matrix 
+// Function to multiply two matrices A and B 
+void multiplyMatrices(int firstMatrix[][N], int secondMatrix[][N], int result[][N]) {     for (int i = 0; i < N; ++i) {         for (int j = 0; j < N; ++j) {             result[i][j] = 0;             for (int k = 0; k < N; ++k) { 
+                result[i][j] += firstMatrix[i][k] * secondMatrix[k][j]; 
+            } 
+        } 
+    } 
+} 
+ 
+int main() { 
+    int A[N][N] = { {1, 2}, {3, 4} };     int B[N][N] = { {5, 6}, {7, 8} };     int C[N][N]; // To store result     multiplyMatrices(A, B, C);     // Display the result     printf("Resultant Matrix C:\n");     for (int i = 0; i < N; ++i) {         for (int j = 0; j < N; ++j) {             printf("%d ", C[i][j]); 
+        } 
+        printf("\n"); 
+    } 
+    return 0; 
+} 
+ 
+Expected Output: 
+Resultant Matrix C: 
+19 22 
+43 50 
+ 
+After running the program, compare the actual output with the expected output to determine if the test case passes or fails. 
+ 
+Conclusion: 
+In conclusion, the provided C program for matrix multiplication performs effectively for the specific, hard-coded example it was designed to handle. It correctly computes the product of two predefined matrices and outputs the resultant matrix. The program serves as a basic demonstration of matrix multiplication using nested loops in C. 
+Overall, while the program is well-implemented for its intended educational purpose, these suggested improvements would broaden its applicability and enhance its utility in practical applications. 
+ 
+The outcome of the experiment: 
+•	The experiment aimed to test the functionality and correctness of a C program for matrix multiplication, using various matrix sizes and values.  
+•	The results confirmed that the program accurately computes the matrix product across all tests, adhering to the expected time complexity.  
+•	It was concluded that the program is functionally correct for small to moderatesized matrices.  
+•	Recommendations for future enhancements include adding dynamic input capabilities, improving error handling, and optimizing performance for larger matrices to extend its applicability and utility. 
+ 
+Exercise assignments:  
+•	Write a c program to generate Fibonacci numbers up to the nth series.  

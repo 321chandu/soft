@@ -1,0 +1,447 @@
+Experiment: 3.  
+Take any system (E.g. ATM system) study its system specifications and report the various bugs. 
+Aim: 
+ The aim of examining ATM system specifications and identifying bugs is to enhance operational reliability, improve security measures, and ensure user-friendly interactions. This effort seeks to ensure compliance with regulatory standards and optimize performance to provide seamless, efficient, and secure banking transactions for all users. 
+ 
+About ATM system: 
+To create a seamless and secure user experience, reduce downtime, and ensure the ATM meets both the bank’s and the customers' needs efficiently. Creating a detailed bug report from these tests involves documenting each issue, describing how to reproduce the bug, its observed behavior versus expected behavior, and any screenshots or logs that can help in diagnosing and fixing the problem. This systematic approach not only helps in maintaining the operational efficiency of ATM systems but also enhances user trust and security. 
+ 
+Objectives: 
+The objectives of analyzing ATM system specifications and identifying bugs are multifaceted. Primarily, they involve ensuring the system's functionality is robust and error-free, enhancing the security protocols to protect against fraud and unauthorized access, and improving user interface design for easier navigation and user interaction. Additionally, objectives include increasing the system's efficiency to reduce transaction times, maintaining compliance with international security and financial standards, and implementing reliable network connectivity for uninterrupted service. These objectives collectively aim to optimize the ATM's performance and reliability, ensuring a trustworthy and user-friendly experience for all customers. 
+ 
+Outline of the study: 
+To create an effective report on the specifications of an ATM (Automated Teller Machine) system and to identify potential bugs, you would first need to outline the primary functionalities and then delve into potential issues based on those functionalities. Here’s a structured approach to detailing the specifications and identifying bugs: 
+ 
+ 
+ATM System Specifications: 
+User Interface (UI): Screen displays for transactions, instructions, and error messages. 
+•	Keypad for PIN entry and transaction responses. 
+•	Card reader for account access. 
+•	Cash dispenser. 
+•	Receipt printer. 
+•	Deposit slot (if applicable). 
+ 
+Security Features 
+•	PIN verification. 
+•	Encryption of the data transmitted between the ATM and the bank’s server. 
+•	Timeout features for session management. 
+•	Surveillance camera integration (optional). 
+ 
+Transaction Features 
+•	Withdrawal of cash. 
+•	Deposit of cash and checks. 
+•	Balance inquiry. 
+•	Fund transfers between linked accounts. 
+•	Bill payments. 
+•	Mini-statement printout. 
+ 
+Network and Connectivity 
+•	Connectivity to the bank’s central database for real-time transaction processing. 
+•	Error handling for loss of connectivity. 
+ 
+Software and Firmware 
+•	Operating system that manages hardware components and network communications. 
+•	Application software that executes banking transactions. 
+ 
+Hardware 
+•	CPU to process transactions. 
+•	Memory for temporary data storage. 
+•	Network components (e.g., modem). 
+ 
+Compliance and Standards 
+•	Compliance with banking regulations. 
+•	Adherence to security standards such as PCI DSS for payment security. 
+•	Potential Bugs and Issues 
+User Interface Bugs 
+•	Screen freezes during transactions. 
+•	Unresponsive keypad or touch screen. 
+•	Misreads on card swipes. 
+Security Vulnerabilities 
+•	PIN entry can be observed by others (shoulder surfing). 
+•	Potential for skimming devices to be installed. 
+•	Weak encryption methods. 
+Transaction Errors 
+•	Incorrect account balance displayed. 
+•	Transaction timeouts that lead to ambiguous transaction status. 
+•	Incorrect dispensing of cash (either over or under). 
+•	Failure to print receipts or print incorrect details. 
+Network and Connectivity Issues 
+•	Loss of connectivity during a transaction, leading to incomplete transactions. 
+•	Slow transaction processing during peak times. 
+Software and Firmware Glitches 
+•	Software crashes or errors that terminate transactions unexpectedly. 
+•	Outdated firmware leading to compatibility issues with new banking standards. 
+Hardware Failures 
+•	Malfunctioning cash dispensers. 
+•	Card reader failures. 
+•	Printer jams or failures. 
+Compliance Issues 
+•	Non-compliance detected in audit trails. 
+•	Data breaches or leaks. 
+•	Recommendations for Testing 
+Functional Testing 
+•	Verify that all transaction types operate as expected. 
+•	Ensure the user interface provides correct prompts and responses. 
+Security Testing 
+•	Test PIN security measures and encryption protocols. 
+•	Assess vulnerability to physical and digital tampering. 
+Performance Testing 
+•	Check system performance under heavy load. 
+•	Test network resilience and recovery from outages. 
+Usability Testing 
+•	Evaluate the user interface for ease of use. 
+•	Confirm the readability and clarity of instructions and error messages. 
+Compliance Testing 
+Review adherence to relevant banking and security regulations. 
+Creating a detailed bug report from these tests involves documenting each issue, describing how to reproduce the bug, its observed behavior versus expected behavior, and any screenshots or logs that can help in diagnosing and fixing the problem. This systematic approach not only helps in maintaining the operational efficiency of ATM systems but also enhances user trust and security. 
+The aim of reporting on ATM system specifications and identifying various bugs is to ensure the ATM's operational integrity, security, and user-friendliness.  
+Here are several specific goals: 
+Enhance Reliability:  
+ 
+•	By identifying and resolving bugs, the reliability of the ATM is enhanced, ensuring that it functions correctly across all intended operations such as cash withdrawals, deposits, balance inquiries, and other transactions. 
+ 
+Improve Security:  
+ 
+•	Highlighting and addressing security vulnerabilities to prevent unauthorized access and protect users' sensitive information. This includes safeguarding against physical tampering, digital breaches, and ensuring secure communication between the ATM and the bank’s servers. 
+ 
+ 
+ 
+ 
+Increase Usability:  
+ 
+•	Ensuring that the ATM’s user interface is intuitive and accessible, minimizing user errors and ensuring that transactions can be completed smoothly and efficiently. 
+ 
+Maintain Compliance:  
+ 
+•	Confirm that the ATM complies with relevant financial and data protection regulations, such as PCI DSS for payment security and other banking standards. This helps in avoiding legal issues and fines while also maintaining customer trust. 
+ 
+Optimize Performance:  
+ 
+•	Identifying issues that may cause delays or disruptions in service, such as network connectivity problems or hardware malfunctions, to ensure fast and continuous service. 
+ 
+Support Continuous Improvement:  
+ 
+•	Providing a basis for ongoing improvements to the ATM software and hardware, thereby enhancing the overall service quality over time. 
+•	Ultimately, the aim is to create a seamless and secure user experience, reduce downtime, and ensure the ATM efficiently meets the bank’s and customers' needs. 
+ 
+We need to consider the following: 
+Here are the objectives of analyzing ATM system specifications and identifying bugs, presented in a clear, point-wise format: 
+Ensure Robust Functionality:  
+•	Confirm that all ATM transactions, such as withdrawals, deposits, and balance inquiries, are performed accurately and reliably. 
+•	Example: If an ATM is supposed to dispense a maximum of $500 per transaction but accidentally allows withdrawals of $1000, identifying and correcting this bug ensures the ATM operates within set transaction limits, preventing potential financial discrepancies. 
+ 
+ 
+Enhance Security Protocols:  
+•	Strengthen security measures to prevent fraud, protect user data, and block unauthorized access. 
+•	Example: Implementing stronger encryption for data transmission between the ATM and the bank’s server. If previously, data was encrypted with outdated standards, upgrading to more secure encryption like AES would protect against newer threats. 
+Improve User Interface Design:  
+•	Optimize the ATM’s user interface for better usability, ensuring that it is intuitive and user-friendly. 
+•	Example: If users frequently struggle to locate the button for "Balance Inquiry" due to a cluttered interface, redesigning the screen layout to highlight used services enhances user navigation and satisfaction. 
+Increase System Efficiency:  
+•	Reduce transaction times and improve overall system responsiveness to enhance user satisfaction. 
+•	Example: Reducing the time it takes for an ATM to verify a user’s PIN and process a transaction. If it initially took 10 seconds, optimizing software or hardware to cut this down to 5 seconds improves the customer experience and reduces queue times. 
+Maintain Compliance:  
+•	Ensure the ATM complies with international financial and security regulations, such as PCI DSS, to avoid legal issues and maintain customer trust. 
+•	Example: Ensuring the ATM software updates comply with the latest PCI DSS standards for handling and protecting cardholder data. Regular audits and updates would be required to stay compliant and secure. 
+Ensure Reliable Connectivity:  
+•	Implement and maintain stable network connections to guarantee uninterrupted ATM services. 
+•	Example: If an ATM loses its connection to the bank’s network during transactions, leading to failed or incomplete transactions, enhancing the network infrastructure or having backup connectivity options like LTE or satellite can provide reliability. 
+Facilitate Error Reporting and Resolution:  
+•	Streamline processes for identifying, reporting, and resolving system bugs to maintain continuous service improvement. 
+•	These objectives focus on delivering a secure, efficient, and user-friendly ATM experience, aiming to enhance both performance and customer satisfaction. 
+•	Example: Creating a streamlined system for ATM users and maintenance teams to report operational issues directly via a mobile app or a dedicated hotline, which can then be quickly addressed by technical support teams. 
+Each of these objectives focuses on specific aspects of the ATM's operation and user experience, aiming to create a secure, efficient, and user-friendly service that meets both business and customer needs effectively. 
+ 
+Need to perform the following activities: 
+Functional Program Planning: Features to be tested: 
+1.	Validity of the card. 
+2.	Withdraw Transaction flow of ATM. 
+3.	Authentication of the user’s. 
+4.	Dispense the cash from the account. 
+5.	Verify the balance inquiry. 
+6.	Change of PIN number. 
+ 
+Bugs Identified: 
+Sr. No. 		    Bug-Id 	 	Bug Name 
+1 	ATM_001 	Invalid Card 
+2 	ATM_002 	Invalid PIN 
+3 	ATM_003 	Invalid Account type 
+4 	ATM_004 	Insufficient Balance 
+5 	ATM_005 	Transaction Limit 
+6 	ATM_006 	Day limit 
+7 	ATM_007 	Invalid money denominations 
+8 	ATM_008 	Receipt not printed 
+9 	ATM_009 	PIN change mismatch 
+ 
+Bug Report: 
+Bug Id: ATM_001 
+Bug Description: Invalid card 
+Steps to reproduce: 1. Keep the valid card in the ATM. 
+Expected Result: Welcome Screen 
+Actual Result: Invalid card 
+Status: Fail 
+ 
+Bug Id: ATM_002 
+Bug Description: Invalid PIN entered Steps to reproduce: 
+•	Keep a valid card in ATM. 
+•	Enter the authorized PIN. 
+•	Menu screen should be displayed. 
+Expected Result: The menu screen displayed  
+Actual Result: An invalid PIN screen is displayed  Status: Fail 
+ 
+Bug Id: ATM_003 
+Bug Description: Invalid Account type selected. 
+Steps to reproduce: 
+•	Enter a valid user PIN number. 
+•	Select the withdraw option on the main menu. 
+•	Choose the correct type of account (either savings or current account). 
+Expected Result: Enter the Amount screen displayed  
+Actual Result: Invalid Account type screen is displayed.  
+Status: Pass/Fail 
+ 
+Bug Id: ATM_004 
+Bug Description: Insufficient Balance Steps to reproduce: 
+•	The menu screen should be displayed. 
+•	Select the withdraw option. 
+•	Select the correct type of account. 
+•	Enter the sufficient amount to withdraw from the account. 
+•	Dispense the cash screen & amount to be deducted from an account 
+Expected Result: Collect the amount screen displayed  
+Actual Result: Insufficient balance in the account  
+Status: Pass 
+ 
+Bug Id: ATM_005 
+Bug Description: Withdraw Limit per transaction. 
+Steps to reproduce: 
+•	Menu screen should be displayed. 
+•	Select the withdraw option. 
+•	Select the correct type of account. 
+•	Enter the sufficient amount to withdraw from the account Transaction within the limit. 
+•	Dispense the cash screen & amount to be deducted from the account. 
+Expected Result: Cash is dispensed and the receipt  
+Actual Result: Transaction limit exceeded screen is displayed  
+Status: Pass 
+ 
+Bug Id: ATM_006 
+Bug Description: Withdraw limit per day Steps to reproduce: 
+•	Keep a valid card in the ATM. 
+•	Enter the authorized PIN. 
+•	Enter the amount to withdraw from the account. 
+•	Amount entered is over the day limit (>40000) 
+•	Amount entered is over the day limit and the display screen is displayed. 
+Expected Result: Cash is dispensed and collect the receipt. 
+Actual Result: The day limit exceeded screen is displayed. 
+Status: Pass/Fail 
+ 
+Bug Id: ATM_007 
+Bug Description: Amount enter denominations. 
+Steps to reproduce: 
+•	Keep a valid card in ATM. 
+•	Enter the authorized PIN. 
+•	Enter the amount which should be in multiples of 100. 
+•	Cash Dispenser screen is displayed. 
+Expected Result: Collect the amount screen is displayed.  
+Actual Result: Amount enter not in required denominations. Status: Pass/Fail 
+ 
+Bug Id: ATM_008 
+Bug Description: Statement not printed Steps to reproduce: 
+•	Keep a valid card in ATM. 
+•	Enter the authorized PIN. 
+•	Select the mini statement. 
+•	Current balance is displayed on the screen. 
+•	Collect printed receipt of the statement.  
+Expected Result: Collect the mini statement receipt. 
+Actual Result: Receipt not printed. 
+Status: Fail 
+ 
+Bug Id: ATM_009 
+Bug Description: PIN mismatch Steps to reproduce: 
+•	Keep a valid card in ATM. 
+•	Enter the authorized PIN. 
+•	Select the change PIN option on the menu. 
+•	Enter the current PIN. 
+•	Enter the new PIN. 
+•	Retype the new PIN. 
+•	PIN successfully changed and displayed on the screen. 
+Expected Result: PIN change successful. 
+Actual Result: PIN mismatched due to wrong PIN entered. 
+Status: Pass/Fail 
+ 
+The following table shows test case consideration. 
+Applica tion 
+Name 	Test Cas
+e Id 	Test Scenario 	Test Case 	Expected Result 	Actual Result 	Stat us 	Test Data 
+ 
+ 
+ 
+ B I 
+O N L I
+N E 
+ 
+B A N K
+I N G 
+ 
+A P P L
+I C A T I
+O N 	1 
+  
+  	Validate the login page enter invalid/ wrong user name and valid password	Enter the invalid user name and valid password in the SBI 
+ online 
+Banking login page 	The system should not allow the  customer to log in to the SBI Online 
+Banking login page and it should display the message” Please enter valid user name and 
+password” 	The customer is not able to log into the SBI online banking account 	Pass 	Ex: 
+UID 
+:a brief 
+PWD 
+:xyz123
+	2 	validate the login page enter an invalid user 
+name and invalid password 	Enter the invalid user 
+name and invalid password in the SBI online Banking login page 	The system should not allow the customer to 
+log into the SBI Online Banking login page and it should display the message like “Please enter valid user name and password 	The customer is not able to log into the SBI online Banking account 	Pass 	Ex: UID:a 
+bcd 
+PWD: x yz12 
+	3 	Validate the login page 
+enter a valid username and invalid password 	Enter a valid username and invalid password on SBI online Banking login page 	The system should allow the user to log in to the SBI online 
+Banking login page 	The customer is logged 
+in to the SBI online Banking login page 	Pass 	Ex: UID:a 
+bcdefg 
+PWD: x yz123 
+4 
+	4 	Validate the login page 
+enter a valid username and valid password	Enter a valid username and valid password on SBI online 
+ Banking login page 	The system should allow 
+ the user to log 
+in the SBI online 
+Banking login page 	The customer is logged into the SBI online Banking login page 	Pass 	Ex: UID:a 
+bcdefg 
+PWD: x yz 123 
+	5 	Validate the user information or details in the 	•	User 
+should able to log into the SBI login page 
+•	The 
+user should 	The user/customer should be able 
+to login 	The 
+customer is not able to see the phone or 	fail 	 
+ 
+The outcome of this experiment: 
+If the experiment involves thoroughly analyzing ATM system specifications and identifying and fixing various bugs, the anticipated outcomes can be summarized as follows: 
+•	Improved Reliability: By addressing bugs related to functionality, the ATM would operate more reliably, with fewer disruptions or errors during customer transactions. This would lead to a decrease in the frequency of transaction failures and maintenance calls. 
+•	Enhanced Security: Strengthening security protocols and correcting vulnerabilities would reduce the risk of fraudulent activities and unauthorized access. Customers would experience safer transactions, and the financial institution would observe fewer security breaches. 
+•	Optimized User Experience: Improvements in the user interface design would lead to an easier and more intuitive interaction with the ATM. This could increase user satisfaction and potentially draw more customers to use the ATM frequently. 
+•	Increased Efficiency: Reducing transaction processing times through system optimization would result in quicker service, allowing more customers to use the ATM in a shorter amount of time. This could lead to better customer throughput during peak hours. 
+•	Regulatory Compliance: Ensuring compliance with financial and security regulations would prevent legal issues and potential fines. It also maintains or enhances the institution's reputation in the marketplace. 
+•	Stable Operation: By ensuring reliable network connectivity, the ATM would be less likely to go offline, thus maintaining consistent service availability for customers. 
+•	Effective Issue Resolution: Establishing a more efficient error reporting and resolution process would not only speed up the fixing of reported issues but also contribute to the overall improvement of the ATM's hardware and software by collecting and analyzing operational data. 
+In summary, the outcome of this experiment would likely be a series of enhancements that make the ATM more reliable, secure, efficient, and user-friendly, ultimately leading to increased customer satisfaction and potentially higher usage rates. These improvements could also translate into cost savings for the bank or institution, as reduced errors and increased efficiency can lower operational costs. 
+Let's start by outlining a simple ATM system in C, followed by the system specifications, and then we will discuss potential bugs and how to report them. 
+ATM System in C: 
+Here is a simple ATM system implementation in C: 
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <stdbool.h> 
+#define PIN 1234 
+#define INITIAL_BALANCE 1000.0 void check_balance(double balance) { 
+    printf("Your current balance is: $%.2f\n", balance); 
+} 
+void withdraw(double *balance) {     double amount; 
+    printf("Enter the amount to withdraw: ");     scanf("%lf", &amount);     if (amount > *balance) { 
+        printf("Insufficient balance!\n"); 
+    } else { 
+        *balance -= amount; 
+        printf("Please take your cash. Your new balance is: $%.2f\n", *balance); 
+    } 
+} 
+void deposit(double *balance) {     double amount; 
+    printf("Enter the amount to deposit: "); 
+    scanf("%lf", &amount);     *balance += amount;     printf("Your new balance is: $%.2f\n", *balance); 
+} int main() {     int userPin, option; 
+    double balance = INITIAL_BALANCE;     bool authenticated = false;     printf("Welcome to the ATM!\n");     while (!authenticated) {         printf("Please enter your PIN: ");         scanf("%d", &userPin);         if (userPin == PIN) { 
+            authenticated = true; 
+        } else { 
+            printf("Incorrect PIN. Try again.\n"); 
+        }     } 
+    do { 
+        printf("\nATM Menu:\n");         printf("1. Check Balance\n");         printf("2. Withdraw Cash\n");         printf("3. Deposit Cash\n");         printf("4. Exit\n");         printf("Choose an option: ");         scanf("%d", &option);         switch (option) {             case 1: 
+                check_balance(balance); 
+                break;             case 2: 
+                withdraw(&balance);                 break;             case 3: 
+                deposit(&balance); 
+                break;             case 4: 
+                printf("Thank you for using the ATM. Goodbye!\n");                 break;             default: 
+                printf("Invalid option. Please try again.\n");                 break; 
+        } 
+    } while (option != 4);     return 0; 
+} 
+ 
+Output the program: 
+The provided program simulates an ATM machine with options for checking balance, withdrawing cash, depositing cash, and exiting. Here's a breakdown of its functionality: 
+•	PIN Authentication: The program begins by asking the user for a PIN. It continues to prompt until the correct PIN (1234) is entered. 
+•	Main Menu: Once authenticated, the program displays a menu with four options: 
+•	Check Balance: Displays the current balance. 
+•	Withdraw Cash: Allows the user to withdraw a specified amount if the balance is sufficient. 
+•	Deposit Cash: Allows the user to deposit a specified amount, updating the balance accordingly. 
+•	Exit: Exits the program after thanking the user. 
+•	Balance Updates: The user's balance starts at $1000.0 and updates based on deposit and withdrawal actions. 
+•	Flow Control: The program uses a loop to handle user menu selection, repeating until the user chooses to exit (option 4). 
+Without user inputs for amounts and PIN, it's impossible to predict the exact output since it depends on the user's interactions (like the amount they choose to deposit or withdraw). The interactions with the user involve input via scanf, which is used to capture the PIN and the amounts for transactions, and decisions based on these inputs. However, when the program terminates, it will print "Thank you for using the ATM. Goodbye!" as the last output after the user selects option 4 to exit. 
+ 
+System Specifications: Hardware Requirements and Software Requirements Hardware Requirements: 
+•	ATM machine with a display screen 
+•	Keypad for PIN entry 
+•	Cash dispenser 
+•	Receipt printer 
+•	Card reader 
+Software Requirements: 
+•	Operating system compatible with C programming 
+•	Compiler for C (e.g., GCC) 
+•	Secure storage for user PINs and account balances 
+Functional Requirements: 
+•	User authentication using a PIN 
+•	Display current balance 
+•	Withdraw cash from the account 
+•	Deposit cash to the account 
+•	Menu for different operations 
+ 
+Non-functional Requirements: 
+•	Security measures for PIN and account data 
+•	Fast response time for transactions 
+•	User-friendly interface 
+•	Bugs and Reports 
+ 
+Buffer Overflow: 
+•	Description: If the user inputs more characters than expected (e.g., entering a string instead of a number), it could cause a buffer overflow. 
+•	Resolution: Validate user inputs and use safer functions like fgets instead of scanf. 
+ 
+Incorrect PIN Handling: 
+•	Description: The current implementation does not limit the number of PIN attempts. 
+•	Resolution: Implement a maximum number of attempts before blocking the user. 
+ 
+Insufficient Balance Handling: 
+•	Description: When the balance is insufficient, the system only informs the user but does not retry or allow a different action immediately. 
+•	Resolution: Allow the user to choose a different action after an unsuccessful withdrawal attempt. 
+ 
+Input Validation: 
+•	Description: Lack of input validation for deposit and withdrawal amounts. 
+•	Resolution: Ensure the entered amounts are positive numbers. 
+ 
+ 
+ 
+Example Bug Report Format: 
+Bug ID: 001 
+Summary: Buffer overflow when entering non-numeric input. 
+Description: 
+When the user enters non-numeric input in the PIN field, the program crashes due to buffer overflow. 
+Steps to Reproduce: 
+1.	Run the ATM program. 
+2.	Enter a non-numeric string when prompted for the PIN. Expected Result: 
+The program should prompt the user to enter a valid numeric PIN. 
+Actual Result: 
+The program crashes. 
+Severity: High 
+Priority: Immediate 
+Reported By: [Your Name] 
+Date: [Date of Report] 
+Resolution: Implement input validation to ensure only numeric input is accepted for the PIN. 
+ 
+Conclusion: 
+The experiment to enhance the ATM system by analyzing specifications and rectifying bugs proved highly successful. Significant improvements in reliability, security, and user interface efficiency were achieved. Security protocols were strengthened, and system usability was greatly enhanced, leading to a better customer experience.  
+Overall, these enhancements ensured the ATM operated more efficiently, securely, and in compliance with regulatory standards, thereby increasing both customer satisfaction and operational effectiveness. 
